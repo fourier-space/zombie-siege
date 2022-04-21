@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>server/Stats4.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Connect4.html">Connect4</a><ul class='methods'><li data-type='method'><a href="Connect4.html#.empty_board">empty_board</a></li><li data-type='method'><a href="Connect4.html#.free_columns">free_columns</a></li><li data-type='method'><a href="Connect4.html#.is_ended">is_ended</a></li><li data-type='method'><a href="Connect4.html#.is_winning_for_player">is_winning_for_player</a></li><li data-type='method'><a href="Connect4.html#.player_to_ply">player_to_ply</a></li><li data-type='method'><a href="Connect4.html#.ply">ply</a></li><li data-type='method'><a href="Connect4.html#.size">size</a></li><li data-type='method'><a href="Connect4.html#.to_string">to_string</a></li><li data-type='method'><a href="Connect4.html#.to_string_with_tokens">to_string_with_tokens</a></li><li data-type='method'><a href="Connect4.html#.winning_slots">winning_slots</a></li></ul></li><li><a href="Stats4.html">Stats4</a><ul class='methods'><li data-type='method'><a href="Stats4.html#.get_statistics">get_statistics</a></li><li data-type='method'><a href="Stats4.html#.record_game">record_game</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">server/Stats4.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Stats4 is a module to load and save game stats and Elo ratings
+ * for Connect 4 games.
+ * @namespace Stats4
+ * @author A. Freddie Page
+ * @version 2021/22
+ */
+const Stats4 = Object.create(null);
+
+/**
+ * @memberof Stats4
+ * @typedef {Object} Statistics
+ * @property {number} elo The Elo score of the player.
+ * {@link https://en.wikipedia.org/wiki/Elo_rating_system}
+ * @property {number} player_1_wins How many times the player
+ * has won when playing first.
+ * @property {number} player_1_losses How many times the player
+ *     has lost when playing first.
+ * @property {number} player_1_draws How many times the player has
+ *     tied when playing first.
+ * @property {number} player_2_wins How many times the player has
+ *     won when playing second.
+ * @property {number} player_2_losses How many times the player has
+ *     lost when playing second.
+ * @property {number} player_2_draws How many times the player has
+ *     tied when playing second.
+ * @property {number} current_streak The number of games the player has won
+ *     since last losing (or ever if the player has never lost).
+ * @property {number} longest_streak The most consecutive games won.
+ */
+
+const player_statistics = {};
+
+const new_player = function () {
+    return {
+        "elo": 100,
+        "player_1_wins": 0,
+        "player_1_losses": 0,
+        "player_1_draws": 0,
+        "player_2_wins": 0,
+        "player_2_losses": 0,
+        "player_2_draws": 0,
+        "current_streak": 0,
+        "longest_streak": 0
+    };
+};
+
+/**
+ * @memberof Stats4
+ * @function
+ * @param {string[]} players A list of player names to return stats for.
+ * @returns {Object.&lt;Stats4.Statistics>} The statistics of the requested
+ *     players as object with keys given in players.
+ */
+Stats4.get_statistics = function (players) {
+    return Object.fromEntries(
+        players.map(
+            (player) => [player, player_statistics[player] || new_player()]
+        )
+    );
+};
+
+const elo = function (elo_updating, elo_opponent, result) {
+    const k_factor = 40;
+    const expected = 1 / (1 + 10 ** ((elo_opponent - elo_updating) / 400));
+    return elo_updating + k_factor * (result - expected);
+};
+
+/**
+ * Record the result of a game and return updated statistcs.
+ * @memberof Stats4
+ * @function
+ * @param {string} player_1 The name of player 1 (who plies first)
+ * @param {string} player_2 The name of player 2
+ * @param {(0 | 1 | 2)} result The number of the player who won,
+ *     or `0` for a draw.
+ * @returns {Object.&lt;Stats4.Statistics>} Returns statistics for player_1 and
+ *     player_2, i.e. the result of
+ *     {@link Stats4.get_statistics}`([player_1, player_2])`
+ */
+Stats4.record_game = function (player_1, player_2, result) {
+    if (!player_statistics[player_1]) {
+        player_statistics[player_1] = new_player();
+    }
+    if (!player_statistics[player_2]) {
+        player_statistics[player_2] = new_player();
+    }
+    const player_1_stats = player_statistics[player_1];
+    const player_2_stats = player_statistics[player_2];
+    let player_1_result;
+    let player_2_result;
+    switch (result) {
+    case (0):
+        player_1_stats.player_1_draws += 1;
+        player_2_stats.player_2_draws += 1;
+        player_1_stats.current_streak = 0;
+        player_2_stats.current_streak = 0;
+        player_1_result = 0.5;
+        player_2_result = 0.5;
+        break;
+    case (1):
+        player_1_stats.player_1_wins += 1;
+        player_2_stats.player_2_losses += 1;
+        player_1_stats.current_streak += 1;
+        player_2_stats.current_streak = 0;
+        if (player_1_stats.current_streak > player_1_stats.longest_streak) {
+            player_1_stats.longest_streak = player_1_stats.current_streak;
+        }
+        player_1_result = 1;
+        player_2_result = 0;
+        break;
+    case (2):
+        player_1_stats.player_1_losses += 1;
+        player_2_stats.player_2_wins += 1;
+        player_1_stats.current_streak = 0;
+        player_2_stats.current_streak += 1;
+        if (player_2_stats.current_streak > player_2_stats.longest_streak) {
+            player_2_stats.longest_streak = player_2_stats.current_streak;
+        }
+        player_1_result = 0;
+        player_2_result = 1;
+        break;
+    }
+
+    const new_player_1_elo = elo(
+        player_1_stats.elo,
+        player_2_stats.elo,
+        player_1_result
+    );
+    const new_player_2_elo = elo(
+        player_2_stats.elo,
+        player_1_stats.elo,
+        player_2_result
+    );
+
+    player_1_stats.elo = new_player_1_elo;
+    player_2_stats.elo = new_player_2_elo;
+
+    return Stats4.get_statistics([player_1, player_2]);
+};
+
+export default Object.freeze(Stats4);
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a> on Thu Apr 21 2022 17:48:02 GMT+0100 (British Summer Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,241 @@
+:root
+{
+    --banner-height: 150px;
+    --banner-font-size: 75pt;
+    --border-width: 2px;
+    --image-border-radius: 7px;
+    --result-height: 250px;
+    --result-width: 500px;
+    --slot_image_height: 120px;
+    --sidebar-width: 250px;
+
+    --banner-background: #123;
+    --banner-colour: rgb(0, 185, 0);
+    --border-colour: white;
+    --result-background: #224466de;
+    --sidebar-background: #246;
+    --sidebar-colour: white;
+    --tile-background: #7e4f46;
+    --main-background: var(--tile-background);
+
+    font-family: "Fira Sans", sans-serif;
+}
+
+@font-face
+{
+    font-family: "Creepster";
+    src: url("./assets/Creepster-Regular.ttf");
+    /* Licence: ./assets/OFL.txt */
+}
+
+*
+{
+    box-sizing: border-box;
+}
+
+body
+{
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+
+#game_board
+{
+    aspect-ratio: 7 / 6;
+    line-height: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 100%;
+    max-width: 100%;
+    position: relative;
+    top: 50%;
+}
+
+.column
+{
+    display: inline-block;
+    outline: transparent;
+    position: relative;
+    top: -50%;
+    width: calc(100% / 7);
+}
+
+#game_board:hover .column:focus .free
+{
+    filter: none;
+}
+
+#game_board:hover .column:hover .free,
+#game_board .column:focus .free
+{
+    filter: hue-rotate(60deg);
+}
+
+#game_board img
+{
+    aspect-ratio: 1;
+    background: var(--tile-background);
+    border: 1px solid var(--border-colour);
+    display: inline-block;
+    pointer-events: none;
+    width: 100%;
+    user-select: none;
+}
+
+#game_board img.winning
+{
+    filter: contrast(2);
+}
+
+main
+{
+    background: var(--main-background);
+    height: calc(100% - var(--banner-height));
+    left: var(--sidebar-width);
+    overflow-y: hidden;
+    position: absolute;
+    top: var(--banner-height);
+    width: calc(100% - 2 * var(--sidebar-width));
+}
+
+#title
+{
+    filter: drop-shadow(4px 4px 2px black);
+    color: var(--banner-colour);
+    font-family: "Creepster";
+    font-style: italic;
+    font-size: var(--banner-font-size);
+    margin: 0;
+    position: relative;
+    text-align: center;
+    top: calc(var(--banner-height) / 2 - var(--banner-font-size) / 2);
+}
+
+header
+{
+    background: var(--banner-background);
+    border-bottom: var(--border-width) solid var(--border-colour);
+    height: var(--banner-height);
+    position: absolute;
+    width: 100%;
+}
+
+header a
+{
+    color: var(--sidebar-colour);
+    position: absolute;
+    right: 1em;
+}
+
+aside
+{
+    background: var(--sidebar-background);
+    color: var(--sidebar-colour);
+    height: calc(100% - var(--banner-height));
+    position: absolute;
+    text-align: center;
+    top: var(--banner-height);
+    width: var(--sidebar-width);
+}
+
+.sidebar h2
+{
+    margin-bottom: 0;
+}
+
+.sidebar .player
+{
+    margin-bottom: 5ex;
+}
+
+.sidebar .game_info
+{
+    margin-bottom: 5ex;
+}
+
+#home_player_type,
+#away_player_type
+{
+    font-weight: bold;
+    font-size: larger;
+}
+
+.sidebar .game_info img
+{
+    border: var(--border-width) solid var(--border-colour);
+    border-radius: var(--image-border-radius);
+}
+
+.sidebar .stats table
+{
+    margin-bottom: 2ex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#home_player
+{
+    border-right: var(--border-width) solid var(--border-colour);
+    left: 0;
+}
+
+#away_player
+{
+    border-left: var(--border-width) solid var(--border-colour);
+    right: 0;
+}
+
+#home_name,
+#away_name
+{
+    background: inherit;
+    border: none;
+    color: inherit;
+    font: inherit;
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: inherit;
+    width: 100%;
+}
+
+#result_dialog
+{
+    background: none;
+    border: none;
+    color: var(--sidebar-colour);
+    filter: drop-shadow(4px 4px 2px black);
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+#result_dialog::backdrop
+{
+    backdrop-filter: blur(2px); /* This won't work in Firefox yet */
+}
+
+#result_dialog h2
+{
+    color: var(--banner-colour);
+    font-family: "Creepster";
+    font-size: 100pt;
+    margin: 0;
+    margin-top: calc(2 * var(--banner-height));
+}
+
+#result_message
+{
+    font-size: 24pt;
+    font-weight: bold;
+    line-height: 2;
+}
+
+#result_winner
+{
+    font-size: 18pt;
+    font-weight: bold;
+}

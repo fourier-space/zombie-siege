@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Connect4.js",
+            "type": "pwa-node",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/web-app/common/Connect4.js"
+        },
+        {
+            "name": "Generate Docs",
+            "command": "jsdoc -c jsdoc.json & exit",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
+            "name": "Server ­– Node",
+            "type": "pwa-node",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/web-app/server/server.js"
+        },
+        {
+            "name": "Browser – Firefox",
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "reloadOnAttach": true,
+            "url": "http://localhost:8080/index.html",
+            "webRoot": "${workspaceFolder}/web-app/browser",
+            "preferences": {
+              "security.fileuri.strict_origin_policy": false
+            }
+        }
+    ]
+}

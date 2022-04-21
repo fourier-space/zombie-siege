@@ -1,0 +1,108 @@
+<!-- In HTML Comments are written like this -->
+<!-- They can all be removed for your apps -->
+<!doctype html> <!-- This first line tells browsers to expect modern standard html 5 -->
+<html lang="en-gb"> <!-- This is indicates the page is written in British English, useful for accessibility -->
+<meta charset="utf-8"> <!-- This indicates how the file is encoded. utf-8 is standard -->
+<title>Zombie Siege</title> <!-- All pages need a title, this will be displayed in the browser's title bar -->
+<link rel="stylesheet" href="default.css"> <!-- Import style sheet – default.css -->
+<link rel="icon" href="./assets/zombie.png"> <!-- Import 'Favorites Icon' – favicon.png -->
+<script type="module" src="main.js"></script> <!-- Load the main script. Must be type="module". Have only one of these -->
+
+<header>
+    <h1 id="title">Zombie Siege</h1>
+    <a href="/docs/">API Documentation</a>
+</header>
+
+<main tabindex="-1">
+    <div id="game_board"></div>
+</main>
+
+<aside id="home_player" class="sidebar" aria-label="Home Player Info">
+    <div class="player">
+        <input id="home_name" aria-label="Home player name" value="Player 1">
+        <div><strong>Elo</strong> <span id="home_elo">100</span></div>
+    </div>
+    <div class="game_info">
+        <div id="home_player_type">Zombies</div>
+        <img id="home_player_type_image" src="./assets/zombie.png" alt="Zombie">
+        <div id="home_ready">You're up!</div>
+    </div>
+    <div class="stats">
+        <table>
+            <tr>
+                <th role="none"></th>
+                <th scope="col">Win</th>
+                <th scope="col">Loss</th>
+                <th scope="col">Draw</th>
+            </tr>
+            <tr>
+                <th scope="row">Zombies</th>
+                <td id="home_p2_wins">1</td>
+                <td id="home_p2_losses">3</td>
+                <td id="home_p2_draws">4</td>
+            </tr>
+            <tr>
+                <th scope="row">Defender</th>
+                <td id="home_p1_wins">6</td>
+                <td id="home_p1_losses">1</td>
+                <td id="home_p1_draws">3</td>
+            </tr>
+        </table>
+        <div>
+            <strong>Longest Streak</strong>
+            <span id="home_longest_streak">4</span>
+        </div>
+        <div>
+            <strong>Current Streak</strong>
+            <span id="home_current_streak">1</span>
+        </div>
+    </div>
+</aside>
+
+<aside id="away_player" class="sidebar" aria-label="Away Player Info">
+    <div class="player">
+        <input id="away_name" aria-label="Away player name" value="Player 2">
+        <div><strong>Elo</strong> <span id="away_elo">100</span></div>
+    </div>
+    <div class="game_info">
+        <div id="away_player_type">Siege Defender</div>
+        <img id="away_player_type_image" src="./assets/barricade.png" alt="Zombie">
+        <div id="away_ready">Wait your turn…</div>
+    </div>
+    <div class="stats">
+        <table>
+            <tr>
+                <th role="none"></th>
+                <th scope="col">Win</th>
+                <th scope="col">Loss</th>
+                <th scope="col">Draw</th>
+            </tr>
+            <tr>
+                <th scope="row">Zombies</th>
+                <td id="away_p2_wins">1</td>
+                <td id="away_p2_losses">3</td>
+                <td id="away_p2_draws">4</td>
+            </tr>
+            <tr>
+                <th scope="row">Defender</th>
+                <td id="away_p1_wins">6</td>
+                <td id="away_p1_losses">1</td>
+                <td id="away_p1_draws">3</td>
+            </tr>
+        </table>
+        <div>
+            <strong>Longest Streak</strong>
+            <span id="away_longest_streak">4</span>
+        </div>
+        <div>
+            <strong>Current Streak</strong>
+            <span id="away_current_streak">1</span>
+        </div>
+    </div>
+</aside>
+
+<dialog id="result_dialog" tabindex="0" aria-label="Game over message">
+    <h2>Game Over</h2>
+    <div id="result_message">Zombies overwhelm the defenses!</div>
+    <div id="result_winner">Freddie wins!</div>
+</dialog>
