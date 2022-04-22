@@ -7,7 +7,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "docdash": "^1.2.0"
+    "docdash": "^1.2.0",
+    "mocha": "^9.2.2"
   },
   "dependencies": {
     "express": "^4.17.3"
