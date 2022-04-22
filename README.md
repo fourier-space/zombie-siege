@@ -34,5 +34,5 @@ The statistics module, `web-app/server/Stats4.js` has a
 
 ## Installation
 * Clone the repository.
-* Run `npm install` in the root directory to install server dependancies (express)
-* Run `npm install --prefix ./web-app/common` to install common dependancis (ramda)
+* Run `npm install` in the root directory to install server dependencies (express)
+* Run `npm install --prefix ./web-app/common` to install common dependencies (ramda)
