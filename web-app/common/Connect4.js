@@ -53,10 +53,24 @@ Connect4.token_strings = Object.freeze({
  * @function
  * @param {number} [width = 7] The width of the new board.
  * @param {number} [height = 6] The height of the new board.
+ * @returns {Connect4.Board} An empty board for starting a game.
  */
 Connect4.empty_board = function (width = 7, height = 6) {
     return R.repeat(R.repeat(0, height), width);
 };
+
+/**
+ * This helper function takes a board, and for each column, returns either
+ * the column's index if it has free slots, or `-1` if it is full.
+ * @function
+ * @param {Connect4.Board} board The board to label.
+ * @returns {number[]} Array containing the column index if free or `-1` if full
+ */
+const label_free_columns = R.addIndex(R.map)((column, index) => (
+    R.includes(0, column)
+    ? index
+    : -1
+));
 
 /**
  * Returns an array of which column numbers are free to place a token in.
@@ -66,11 +80,7 @@ Connect4.empty_board = function (width = 7, height = 6) {
  * @returns {number[]} An array of column indices of free columns.
  */
 Connect4.free_columns = R.pipe(
-    R.addIndex(R.map)((column, index) => (
-        R.includes(0, column)
-        ? index
-        : -1
-    )),
+    label_free_columns,
     R.reject(R.equals(-1))
 );
 
