@@ -1,3 +1,4 @@
+/*jslint browser*/
 const Json_rpc = Object.create(null);
 
 const fetch = window.fetch;
@@ -10,18 +11,18 @@ Json_rpc.method = function (method_name) {
     return function (...params) {
 
         const body = JSON.stringify({
-            "jsonrpc": "2.0",
             "id": json_rpc_id,
+            "jsonrpc": "2.0",
             "method": method_name,
             "params": params
         });
 
         return fetch("/", {
-            "method": "POST",
             "body": body,
             "headers": {
                 "Content-Type": "application/json"
-            }
+            },
+            "method": "POST"
         }).then(json).then((response_object) => response_object.result);
     };
 };

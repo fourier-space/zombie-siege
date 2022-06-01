@@ -33,15 +33,15 @@ const player_statistics = {};
 
 const new_player = function () {
     return {
-        "elo": 100,
-        "player_1_wins": 0,
-        "player_1_losses": 0,
-        "player_1_draws": 0,
-        "player_2_wins": 0,
-        "player_2_losses": 0,
-        "player_2_draws": 0,
         "current_streak": 0,
-        "longest_streak": 0
+        "elo": 100,
+        "longest_streak": 0,
+        "player_1_draws": 0,
+        "player_1_losses": 0,
+        "player_1_wins": 0,
+        "player_2_draws": 0,
+        "player_2_losses": 0,
+        "player_2_wins": 0
     };
 };
 
