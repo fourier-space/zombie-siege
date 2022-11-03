@@ -269,9 +269,9 @@ const winning_indices_in_column = function (column) {
             return;
         }
         if (streak >= 4) {
+            starting_index = index - streak;
             return true;
         }
-        starting_index = index;
         streak = 1;
         last_token = token;
     });
