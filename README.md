@@ -26,5 +26,4 @@ This web app is designed with a zombies theme.
 
 ## Installation
 * Clone the repository.
-* Run `npm install` in the root directory to install server dependencies (express)
-* Run `npm install --prefix ./web-app/common` to install common dependencies (ramda)
+* Run `npm install` in the root directory to install dependencies (ramda, mocha, docdash)
