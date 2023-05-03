@@ -1,5 +1,5 @@
-import Connect4 from "../common/Connect4.js";
-import R from "../common/ramda.js";
+import Connect4 from "../Connect4.js";
+import R from "../ramda.js";
 
 const DISPLAY_MODE = "to_string";
 

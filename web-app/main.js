@@ -1,7 +1,7 @@
 /*jslint browser */
-import R from "./common/ramda.js";
-import Connect4 from "./common/Connect4.js";
-import Json_rpc from "./Json_rpc.js";
+import R from "./ramda.js";
+import Connect4 from "./Connect4.js";
+import Stats4 from "./Stats4.js";
 
 // String literals.
 const image_sources = [
@@ -25,10 +25,6 @@ const player_types = {
     "1": "Siege Defender",
     "2": "Zombies"
 };
-
-// Stats4 Methods:
-const record_game = Json_rpc.method("record_game");
-const get_statistics = Json_rpc.method("get_statistics");
 
 const game_board = document.getElementById("game_board");
 
@@ -95,14 +91,13 @@ const slot_images = R.range(0, 7).map(function (column_index) {
                 result_text[result]
             );
 
+            let stats;
             if (home_player_type === 1) { // Who went first?
-                record_game(home_player, away_player, result).then(
-                    update_statistics(home_player, away_player)
-                );
+                stats = Stats4.record_game(home_player, away_player, result);
+                update_statistics(home_player, away_player, stats);
             } else {
-                record_game(away_player, home_player, result).then(
-                    update_statistics(home_player, away_player)
-                );
+                stats = Stats4.record_game(away_player, home_player, result);
+                update_statistics(home_player, away_player, stats);
             }
 
             result_dialog.showModal();
@@ -193,52 +188,48 @@ const redraw_board = function () {
     }
 };
 
-const update_statistics = function (home_player, away_player) {
-    return function (stats) {
-        const stats_home = stats[home_player];
-        const stats_away = stats[away_player];
+const update_statistics = function (home_player, away_player, stats) {
+    const stats_home = stats[home_player];
+    const stats_away = stats[away_player];
 
-        el("home_name").textContent = home_player;
-        el("home_elo").textContent = Math.round(stats_home.elo);
-        el("home_p1_wins").textContent = stats_home.player_1_wins;
-        el("home_p1_losses").textContent = stats_home.player_1_losses;
-        el("home_p1_draws").textContent = stats_home.player_1_draws;
-        el("home_p2_wins").textContent = stats_home.player_2_wins;
-        el("home_p2_losses").textContent = stats_home.player_2_losses;
-        el("home_p2_draws").textContent = stats_home.player_2_draws;
-        el("home_current_streak").textContent = stats_home.current_streak;
-        el("home_longest_streak").textContent = stats_home.longest_streak;
+    el("home_name").textContent = home_player;
+    el("home_elo").textContent = Math.round(stats_home.elo);
+    el("home_p1_wins").textContent = stats_home.player_1_wins;
+    el("home_p1_losses").textContent = stats_home.player_1_losses;
+    el("home_p1_draws").textContent = stats_home.player_1_draws;
+    el("home_p2_wins").textContent = stats_home.player_2_wins;
+    el("home_p2_losses").textContent = stats_home.player_2_losses;
+    el("home_p2_draws").textContent = stats_home.player_2_draws;
+    el("home_current_streak").textContent = stats_home.current_streak;
+    el("home_longest_streak").textContent = stats_home.longest_streak;
 
-        el("away_name").textContent = away_player;
-        el("away_elo").textContent = Math.round(stats_away.elo);
-        el("away_p1_wins").textContent = stats_away.player_1_wins;
-        el("away_p1_losses").textContent = stats_away.player_1_losses;
-        el("away_p1_draws").textContent = stats_away.player_1_draws;
-        el("away_p2_wins").textContent = stats_away.player_2_wins;
-        el("away_p2_losses").textContent = stats_away.player_2_losses;
-        el("away_p2_draws").textContent = stats_away.player_2_draws;
-        el("away_current_streak").textContent = stats_away.current_streak;
-        el("away_longest_streak").textContent = stats_away.longest_streak;
+    el("away_name").textContent = away_player;
+    el("away_elo").textContent = Math.round(stats_away.elo);
+    el("away_p1_wins").textContent = stats_away.player_1_wins;
+    el("away_p1_losses").textContent = stats_away.player_1_losses;
+    el("away_p1_draws").textContent = stats_away.player_1_draws;
+    el("away_p2_wins").textContent = stats_away.player_2_wins;
+    el("away_p2_losses").textContent = stats_away.player_2_losses;
+    el("away_p2_draws").textContent = stats_away.player_2_draws;
+    el("away_current_streak").textContent = stats_away.current_streak;
+    el("away_longest_streak").textContent = stats_away.longest_streak;
 
-        // I probably overdid it with the stats.
-    };
+    // I probably overdid it with the stats.
 };
 
 document.getElementById("home_name").onchange = function () {
     home_player = document.getElementById("home_name").value;
     away_player = document.getElementById("away_name").value;
-    get_statistics([home_player, away_player]).then(
-        update_statistics(home_player, away_player)
-    );
+    const stats = Stats4.get_statistics([home_player, away_player]);
+    update_statistics(home_player, away_player, stats);
 };
 
 document.getElementById("away_name").onchange = (
     document.getElementById("home_name").onchange
 );
 
-get_statistics([home_player, away_player]).then(
-    update_statistics(home_player, away_player)
-);
+const stats = Stats4.get_statistics([home_player, away_player]);
+update_statistics(home_player, away_player, stats);
 
 home_player_type = 2;
 swap_player_types();

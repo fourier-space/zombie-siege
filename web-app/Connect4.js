@@ -1,4 +1,4 @@
-import R from "../common/ramda.js";
+import R from "./ramda.js";
 /**
  * Connect4.js is a module to model and play "Connect Four" and related games.
  * https://en.wikipedia.org/wiki/Connect_Four
