@@ -8,7 +8,7 @@ coursework.
 ![Screenshot of Zombie Seige gameplay](screenshot.png)
 
 It defines a module,
-`web-app/common/Connect4.js`,
+`web-app/Connect4.js`,
 for representing and playing
 Connect Four style games in pure Javascript.
 This module exposes pure functions in its
@@ -21,7 +21,7 @@ The test set is not exhaustive, but tests the game-end conditions.
 
 A front-end application is written to wrap the game module in a browser based
 web app,
-`web-app/browser/`
+`web-app/`
 This web app is designed with a zombies theme.
 
 ## Installation
