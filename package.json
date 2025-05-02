@@ -3,14 +3,14 @@
   "type": "module",
   "version": "1.0.0",
   "description": "",
-  "main": "web-app/server/server.js",
+  "main": "web-app/Connect4.js",
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "docdash": "^1.2.0",
-    "mocha": "^9.2.2"
+    "docdash": "^2.0.2",
+    "mocha": "^11.1.0"
   },
   "dependencies": {
-    "ramda": "^0.29.0"
+    "ramda": "^0.30.1"
   }
 }

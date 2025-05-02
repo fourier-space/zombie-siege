@@ -22,9 +22,23 @@
     },
     "templates": {
         "cleverLinks": true,
-        "monospaceLinks": false
+        "monospaceLinks": false,
+        "default": {
+            "staticFiles": {
+                "include": [
+                    "./.docs-template/custom.css"
+                ]
+            }
+        }
     },
     "docdash": {
-        "collapse": false
+        "scripts": [
+            "custom.css"
+        ],
+        "static": true,
+        "sort": true,
+        "collapse": false,
+        "typedefs": true,
+        "ShortenTypes": true
     }
 }

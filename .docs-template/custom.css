@@ -1,0 +1,14 @@
+h4
+{
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+.type-signature.type-signature-static
+{
+    display: none;
+}
+
+nav ul a, nav ul a:active {
+    font-size: 11pt;
+}

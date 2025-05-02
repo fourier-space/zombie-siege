@@ -14,6 +14,7 @@
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
     <script src="scripts/nav.js" defer></script>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -27,7 +28,9 @@
 
 <nav >
     
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Connect4.html">Connect4</a><ul class='methods'><li data-type='method'><a href="Connect4.html#.empty_board">empty_board</a></li><li data-type='method'><a href="Connect4.html#.free_columns">free_columns</a></li><li data-type='method'><a href="Connect4.html#.is_ended">is_ended</a></li><li data-type='method'><a href="Connect4.html#.is_winning_for_player">is_winning_for_player</a></li><li data-type='method'><a href="Connect4.html#.player_to_ply">player_to_ply</a></li><li data-type='method'><a href="Connect4.html#.ply">ply</a></li><li data-type='method'><a href="Connect4.html#.size">size</a></li><li data-type='method'><a href="Connect4.html#.to_string">to_string</a></li><li data-type='method'><a href="Connect4.html#.to_string_with_tokens">to_string_with_tokens</a></li><li data-type='method'><a href="Connect4.html#.winning_slots">winning_slots</a></li></ul></li><li><a href="Stats4.html">Stats4</a><ul class='methods'><li data-type='method'><a href="Stats4.html#.get_statistics">get_statistics</a></li><li data-type='method'><a href="Stats4.html#.record_game">record_game</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#label_free_columns">label_free_columns</a></li></ul>
+    
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Connect4.html">Connect4</a><ul class='members'><li data-type='member'><a href="Connect4.html#.token_strings">token_strings</a></li></ul><ul class='methods'><li data-type='method'><a href="Connect4.html#.empty_board">empty_board</a></li><li data-type='method'><a href="Connect4.html#.free_columns">free_columns</a></li><li data-type='method'><a href="Connect4.html#.is_ended">is_ended</a></li><li data-type='method'><a href="Connect4.html#.is_winning_for_player">is_winning_for_player</a></li><li data-type='method'><a href="Connect4.html#.player_to_ply">player_to_ply</a></li><li data-type='method'><a href="Connect4.html#.ply">ply</a></li><li data-type='method'><a href="Connect4.html#.size">size</a></li><li data-type='method'><a href="Connect4.html#.to_string">to_string</a></li><li data-type='method'><a href="Connect4.html#.to_string_with_tokens">to_string_with_tokens</a></li><li data-type='method'><a href="Connect4.html#.winning_slots">winning_slots</a></li></ul></li><li><a href="Stats4.html">Stats4</a><ul class='methods'><li data-type='method'><a href="Stats4.html#.get_statistics">get_statistics</a></li><li data-type='method'><a href="Stats4.html#.record_game">record_game</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#label_free_columns">label_free_columns</a></li></ul>
+    
 </nav>
 
 <div id="main">
@@ -45,7 +48,9 @@
 <header>
     
         <h2>
-        Connect4
+        
+            Namespace
+        
         </h2>
         
     
@@ -57,7 +62,22 @@
         
             
 
+
+    
+
+    <h4 class="name" id="Connect4">Connect4</h4>
+
+    
+
+
+
+
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Connect4.js is a module to model and play &quot;Connect Four&quot; and related games.
+https://en.wikipedia.org/wiki/Connect_Four</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -110,12 +130,32 @@
 
 
 
-            
-                <div class="description usertext"><p>Connect4.js is a module to model and play &quot;Connect Four&quot; and related games.
-https://en.wikipedia.org/wiki/Connect_Four</p></div>
-            
 
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
         </div>
     
@@ -137,13 +177,17 @@ https://en.wikipedia.org/wiki/Connect_Four</p></div>
 
         
             
-<h4 class="name" id=".token_strings"><span class="type-signature">(static) </span>token_strings<span class="type-signature"> :Array.&lt;string></span></h4>
+<h4 class="name" id=".token_strings"><span class="type-signature type-signature-static">(static) </span>token_strings<span class="type-signature"> :Array.&lt;string></span></h4>
 
 
 
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>A set of template token strings for <a href="Connect4.html#.to_string_with_tokens"><code>Connect4.to_string_with_tokens</code></a>.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -220,6 +264,7 @@ https://en.wikipedia.org/wiki/Connect_Four</p></div>
 <span class="param-type">Array.&lt;string></span>
 
 
+
             
             </td>
 
@@ -241,6 +286,7 @@ https://en.wikipedia.org/wiki/Connect_Four</p></div>
             
                 
 <span class="param-type">Array.&lt;string></span>
+
 
 
             
@@ -265,6 +311,7 @@ Displays tokens as coloured disks.</p></td>
             
                 
 <span class="param-type">Array.&lt;string></span>
+
 
 
             
@@ -293,11 +340,12 @@ Displays tokens as zombies and barricades.</p></td>
 
 
 
-    <h5>Type:</h5>
+    <h5 class="h5-types">Type:</h5>
     <ul>
         <li>
             
 <span class="param-type">Array.&lt;string></span>
+
 
 
         </li>
@@ -319,7 +367,7 @@ Displays tokens as zombies and barricades.</p></td>
 
     
 
-    <h4 class="name" id=".empty_board"><span class="type-signature">(static) </span>empty_board<span class="signature">(width<span class="signature-attributes">opt</span>, height<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Connect4.html#.Board">Connect4.Board</a>}</span></h4>
+    <h4 class="name" id=".empty_board"><span class="type-signature type-signature-static">(static) </span>empty_board<span class="signature">(width<span class="signature-attributes">opt</span>, height<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Connect4.html#.Board">Connect4.Board</a>}</span></h4>
 
     
 
@@ -327,6 +375,12 @@ Displays tokens as zombies and barricades.</p></td>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Create a new empty board.
+Optionally with a specified width and height,
+otherwise returns a standard 7 wide, 6 high board.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -370,11 +424,6 @@ Displays tokens as zombies and barricades.</p></td>
 
 
 
-<div class="description usertext">
-    <p>Create a new empty board.
-Optionally with a specified width and height,
-otherwise returns a standard 7 wide, 6 high board.</p>
-</div>
 
 
 
@@ -383,10 +432,7 @@ otherwise returns a standard 7 wide, 6 high board.</p>
 
 
 
-
-
-
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -422,6 +468,7 @@ otherwise returns a standard 7 wide, 6 high board.</p>
             
                 
 <span class="param-type">number</span>
+
 
 
             
@@ -461,6 +508,7 @@ otherwise returns a standard 7 wide, 6 high board.</p>
             
                 
 <span class="param-type">number</span>
+
 
 
             
@@ -508,7 +556,7 @@ otherwise returns a standard 7 wide, 6 high board.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -526,6 +574,7 @@ otherwise returns a standard 7 wide, 6 high board.</p>
 <span class="param-type"><a href="Connect4.html#.Board">Connect4.Board</a></span>
 
 
+
     </dd>
 </dl>
 
@@ -538,7 +587,7 @@ otherwise returns a standard 7 wide, 6 high board.</p>
 
     
 
-    <h4 class="name" id=".free_columns"><span class="type-signature">(static) </span>free_columns<span class="signature">(board)</span><span class="type-signature"> &rarr; {Array.&lt;number>}</span></h4>
+    <h4 class="name" id=".free_columns"><span class="type-signature type-signature-static">(static) </span>free_columns<span class="signature">(board)</span><span class="type-signature"> &rarr; {Array.&lt;number>}</span></h4>
 
     
 
@@ -546,6 +595,10 @@ otherwise returns a standard 7 wide, 6 high board.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Returns an array of which column numbers are free to place a token in.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -589,9 +642,6 @@ otherwise returns a standard 7 wide, 6 high board.</p>
 
 
 
-<div class="description usertext">
-    <p>Returns an array of which column numbers are free to place a token in.</p>
-</div>
 
 
 
@@ -600,10 +650,7 @@ otherwise returns a standard 7 wide, 6 high board.</p>
 
 
 
-
-
-
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -637,6 +684,7 @@ otherwise returns a standard 7 wide, 6 high board.</p>
 <span class="param-type"><a href="Connect4.html#.Board">Connect4.Board</a></span>
 
 
+
             
             </td>
 
@@ -666,7 +714,7 @@ otherwise returns a standard 7 wide, 6 high board.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -684,6 +732,7 @@ otherwise returns a standard 7 wide, 6 high board.</p>
 <span class="param-type">Array.&lt;number></span>
 
 
+
     </dd>
 </dl>
 
@@ -696,7 +745,7 @@ otherwise returns a standard 7 wide, 6 high board.</p>
 
     
 
-    <h4 class="name" id=".is_ended"><span class="type-signature">(static) </span>is_ended<span class="signature">(board)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <h4 class="name" id=".is_ended"><span class="type-signature type-signature-static">(static) </span>is_ended<span class="signature">(board)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
 
     
 
@@ -704,6 +753,11 @@ otherwise returns a standard 7 wide, 6 high board.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Returns if a game has ended,
+either because a player has won or the board is full.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -747,10 +801,6 @@ otherwise returns a standard 7 wide, 6 high board.</p>
 
 
 
-<div class="description usertext">
-    <p>Returns if a game has ended,
-either because a player has won or the board is full.</p>
-</div>
 
 
 
@@ -759,10 +809,7 @@ either because a player has won or the board is full.</p>
 
 
 
-
-
-
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -796,6 +843,7 @@ either because a player has won or the board is full.</p>
 <span class="param-type"><a href="Connect4.html#.Board">Connect4.Board</a></span>
 
 
+
             
             </td>
 
@@ -825,7 +873,7 @@ either because a player has won or the board is full.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -843,6 +891,7 @@ either because a player has won or the board is full.</p>
 <span class="param-type">boolean</span>
 
 
+
     </dd>
 </dl>
 
@@ -855,7 +904,7 @@ either because a player has won or the board is full.</p>
 
     
 
-    <h4 class="name" id=".is_winning_for_player"><span class="type-signature">(static) </span>is_winning_for_player<span class="signature">(player, board)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <h4 class="name" id=".is_winning_for_player"><span class="type-signature type-signature-static">(static) </span>is_winning_for_player<span class="signature">(player, board)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
 
     
 
@@ -863,6 +912,12 @@ either because a player has won or the board is full.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Returns if the board is in a winning state for any player.
+A board is won for a player if that player has four tokens in a row,
+either horizontally, vertically, or diagonally, at any position on the board.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -906,11 +961,6 @@ either because a player has won or the board is full.</p>
 
 
 
-<div class="description usertext">
-    <p>Returns if the board is in a winning state for any player.
-A board is won for a player if that player has four tokens in a row,
-either horizontally, vertically, or diagonally, at any position on the board.</p>
-</div>
 
 
 
@@ -919,10 +969,7 @@ either horizontally, vertically, or diagonally, at any position on the board.</p
 
 
 
-
-
-
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -959,6 +1006,7 @@ either horizontally, vertically, or diagonally, at any position on the board.</p
 <span class="param-type">2</span>
 
 
+
             
             </td>
 
@@ -980,6 +1028,7 @@ either horizontally, vertically, or diagonally, at any position on the board.</p
             
                 
 <span class="param-type"><a href="Connect4.html#.Board">Connect4.Board</a></span>
+
 
 
             
@@ -1011,7 +1060,7 @@ either horizontally, vertically, or diagonally, at any position on the board.</p
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -1030,6 +1079,7 @@ for the specified player.</p>
 <span class="param-type">boolean</span>
 
 
+
     </dd>
 </dl>
 
@@ -1042,7 +1092,7 @@ for the specified player.</p>
 
     
 
-    <h4 class="name" id=".player_to_ply"><span class="type-signature">(static) </span>player_to_ply<span class="signature">(board)</span><span class="type-signature"> &rarr; {1|2}</span></h4>
+    <h4 class="name" id=".player_to_ply"><span class="type-signature type-signature-static">(static) </span>player_to_ply<span class="signature">(board)</span><span class="type-signature"> &rarr; {1|2}</span></h4>
 
     
 
@@ -1050,6 +1100,10 @@ for the specified player.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Returns which player is the next to make a ply for a board.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -1093,9 +1147,6 @@ for the specified player.</p>
 
 
 
-<div class="description usertext">
-    <p>Returns which player is the next to make a ply for a board.</p>
-</div>
 
 
 
@@ -1104,10 +1155,7 @@ for the specified player.</p>
 
 
 
-
-
-
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -1141,6 +1189,7 @@ for the specified player.</p>
 <span class="param-type"><a href="Connect4.html#.Board">Connect4.Board</a></span>
 
 
+
             
             </td>
 
@@ -1170,7 +1219,7 @@ for the specified player.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -1191,6 +1240,7 @@ for the specified player.</p>
 <span class="param-type">2</span>
 
 
+
     </dd>
 </dl>
 
@@ -1203,7 +1253,7 @@ for the specified player.</p>
 
     
 
-    <h4 class="name" id=".ply"><span class="type-signature">(static) </span>ply<span class="signature">(token, column_index, board)</span><span class="type-signature"> &rarr; {<a href="Connect4.html#.Board">Connect4.Board</a>|undefined}</span></h4>
+    <h4 class="name" id=".ply"><span class="type-signature type-signature-static">(static) </span>ply<span class="signature">(token, column_index, board)</span><span class="type-signature"> &rarr; {<a href="Connect4.html#.Board">Connect4.Board</a>|undefined}</span></h4>
 
     
 
@@ -1211,6 +1261,11 @@ for the specified player.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>A ply is one turn taken by one of the players.
+Return a new board after a player places a token in a specified column.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -1254,10 +1309,6 @@ for the specified player.</p>
 
 
 
-<div class="description usertext">
-    <p>A ply is one turn taken by one of the players.
-Return a new board after a player places a token in a specified column.</p>
-</div>
 
 
 
@@ -1266,10 +1317,7 @@ Return a new board after a player places a token in a specified column.</p>
 
 
 
-
-
-
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -1303,6 +1351,7 @@ Return a new board after a player places a token in a specified column.</p>
 <span class="param-type"><a href="Connect4.html#.Token">Connect4.Token</a></span>
 
 
+
             
             </td>
 
@@ -1326,6 +1375,7 @@ Return a new board after a player places a token in a specified column.</p>
 <span class="param-type">number</span>
 
 
+
             
             </td>
 
@@ -1347,6 +1397,7 @@ Return a new board after a player places a token in a specified column.</p>
             
                 
 <span class="param-type"><a href="Connect4.html#.Board">Connect4.Board</a></span>
+
 
 
             
@@ -1378,7 +1429,7 @@ Return a new board after a player places a token in a specified column.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -1400,6 +1451,7 @@ return the new board, otherwise return <code>undefined</code>.</p>
 <span class="param-type">undefined</span>
 
 
+
     </dd>
 </dl>
 
@@ -1412,7 +1464,7 @@ return the new board, otherwise return <code>undefined</code>.</p>
 
     
 
-    <h4 class="name" id=".size"><span class="type-signature">(static) </span>size<span class="signature">(board)</span><span class="type-signature"> &rarr; {Array.&lt;number>}</span></h4>
+    <h4 class="name" id=".size"><span class="type-signature type-signature-static">(static) </span>size<span class="signature">(board)</span><span class="type-signature"> &rarr; {Array.&lt;number>}</span></h4>
 
     
 
@@ -1420,6 +1472,10 @@ return the new board, otherwise return <code>undefined</code>.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Returns the size of a board as an array of [width, height].</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -1463,9 +1519,6 @@ return the new board, otherwise return <code>undefined</code>.</p>
 
 
 
-<div class="description usertext">
-    <p>Returns the size of a board as an array of [width, height].</p>
-</div>
 
 
 
@@ -1474,10 +1527,7 @@ return the new board, otherwise return <code>undefined</code>.</p>
 
 
 
-
-
-
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -1511,6 +1561,7 @@ return the new board, otherwise return <code>undefined</code>.</p>
 <span class="param-type"><a href="Connect4.html#.Board">Connect4.Board</a></span>
 
 
+
             
             </td>
 
@@ -1540,7 +1591,7 @@ return the new board, otherwise return <code>undefined</code>.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -1558,6 +1609,7 @@ return the new board, otherwise return <code>undefined</code>.</p>
 <span class="param-type">Array.&lt;number></span>
 
 
+
     </dd>
 </dl>
 
@@ -1570,7 +1622,7 @@ return the new board, otherwise return <code>undefined</code>.</p>
 
     
 
-    <h4 class="name" id=".to_string"><span class="type-signature">(static) </span>to_string<span class="signature">(board)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id=".to_string"><span class="type-signature type-signature-static">(static) </span>to_string<span class="signature">(board)</span><span class="type-signature"> &rarr; {string}</span></h4>
 
     
 
@@ -1578,6 +1630,11 @@ return the new board, otherwise return <code>undefined</code>.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Returns a string representation of a board.
+I.e. for printing to the console rather than serialisation.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -1621,10 +1678,6 @@ return the new board, otherwise return <code>undefined</code>.</p>
 
 
 
-<div class="description usertext">
-    <p>Returns a string representation of a board.
-I.e. for printing to the console rather than serialisation.</p>
-</div>
 
 
 
@@ -1633,10 +1686,7 @@ I.e. for printing to the console rather than serialisation.</p>
 
 
 
-
-
-
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -1670,6 +1720,7 @@ I.e. for printing to the console rather than serialisation.</p>
 <span class="param-type"><a href="Connect4.html#.Board">Connect4.Board</a></span>
 
 
+
             
             </td>
 
@@ -1699,7 +1750,7 @@ I.e. for printing to the console rather than serialisation.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -1717,6 +1768,7 @@ I.e. for printing to the console rather than serialisation.</p>
 <span class="param-type">string</span>
 
 
+
     </dd>
 </dl>
 
@@ -1729,7 +1781,7 @@ I.e. for printing to the console rather than serialisation.</p>
 
     
 
-    <h4 class="name" id=".to_string_with_tokens"><span class="type-signature">(static) </span>to_string_with_tokens<span class="signature">(token_strings)</span><span class="type-signature"> &rarr; {function}</span></h4>
+    <h4 class="name" id=".to_string_with_tokens"><span class="type-signature type-signature-static">(static) </span>to_string_with_tokens<span class="signature">(token_strings)</span><span class="type-signature"> &rarr; {function}</span></h4>
 
     
 
@@ -1737,6 +1789,11 @@ I.e. for printing to the console rather than serialisation.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Returns a <a href="Connect4.html#.to_string"><code>Connect4.to_string</code></a> like function,
+mapping tokens to provided string representations.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -1780,10 +1837,6 @@ I.e. for printing to the console rather than serialisation.</p>
 
 
 
-<div class="description usertext">
-    <p>Returns a <a href="Connect4.html#.to_string"><code>Connect4.to_string</code></a> like function,
-mapping tokens to provided string representations.</p>
-</div>
 
 
 
@@ -1792,10 +1845,7 @@ mapping tokens to provided string representations.</p>
 
 
 
-
-
-
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -1829,6 +1879,7 @@ mapping tokens to provided string representations.</p>
 <span class="param-type">Array.&lt;string></span>
 
 
+
             
             </td>
 
@@ -1859,7 +1910,7 @@ mapping tokens to provided string representations.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -1877,6 +1928,7 @@ mapping tokens to provided string representations.</p>
 <span class="param-type">function</span>
 
 
+
     </dd>
 </dl>
 
@@ -1889,7 +1941,7 @@ mapping tokens to provided string representations.</p>
 
     
 
-    <h4 class="name" id=".winning_slots"><span class="type-signature">(static) </span>winning_slots<span class="signature">(board)</span><span class="type-signature"> &rarr; {Array.&lt;Array.&lt;number>>}</span></h4>
+    <h4 class="name" id=".winning_slots"><span class="type-signature type-signature-static">(static) </span>winning_slots<span class="signature">(board)</span><span class="type-signature"> &rarr; {Array.&lt;Array.&lt;number>>}</span></h4>
 
     
 
@@ -1897,6 +1949,14 @@ mapping tokens to provided string representations.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>For a board that is won,
+returns the coordinates (col, row) of slots contributing to the win.
+Will return more than four coordinates if there is a win along multiple axes,
+or a longer streak than four in a row.
+Returns the empty array if the board is not won.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -1940,13 +2000,6 @@ mapping tokens to provided string representations.</p>
 
 
 
-<div class="description usertext">
-    <p>For a board that is won,
-returns the coordinates (col, row) of slots contributing to the win.
-Will return more than four coordinates if there is a win along multiple axes,
-or a longer streak than four in a row.
-Returns the empty array if the board is not won.</p>
-</div>
 
 
 
@@ -1955,10 +2008,7 @@ Returns the empty array if the board is not won.</p>
 
 
 
-
-
-
-    <h5>Parameters:</h5>
+    <h5 class="h5-parameters">Parameters:</h5>
     
 
 <table class="params">
@@ -1992,6 +2042,7 @@ Returns the empty array if the board is not won.</p>
 <span class="param-type">Connect4.board</span>
 
 
+
             
             </td>
 
@@ -2021,7 +2072,7 @@ Returns the empty array if the board is not won.</p>
 
 
 
-<h5>Returns:</h5>
+<h5 class="h5-returns">Returns:</h5>
 
         
 <div class="param-desc">
@@ -2037,6 +2088,7 @@ Returns the empty array if the board is not won.</p>
     <dd>
         
 <span class="param-type">Array.&lt;Array.&lt;number>></span>
+
 
 
     </dd>
@@ -2061,6 +2113,13 @@ Returns the empty array if the board is not won.</p>
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>A Board is an rectangular grid that tokens can be placed into one at a time.
+Tokens fill up empty positions from the bottom of a column upwards.
+It is implemented as an array of columns (rather than rows) of tokens
+(or empty positions)</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -2113,11 +2172,12 @@ It is implemented as an array of columns (rather than rows) of tokens
 
 
 
-    <h5>Type:</h5>
+    <h5 class="h5-types">Type:</h5>
     <ul>
         <li>
             
 <span class="param-type">Array.&lt;Array.&lt;<a href="Connect4.html#.Token_or_empty">Connect4.Token_or_empty</a>>></span>
+
 
 
         </li>
@@ -2137,6 +2197,10 @@ It is implemented as an array of columns (rather than rows) of tokens
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>A token is a coloured disk that players place in the grid.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -2186,7 +2250,7 @@ It is implemented as an array of columns (rather than rows) of tokens
 
 
 
-    <h5>Type:</h5>
+    <h5 class="h5-types">Type:</h5>
     <ul>
         <li>
             
@@ -2194,6 +2258,7 @@ It is implemented as an array of columns (rather than rows) of tokens
 |
 
 <span class="param-type">2</span>
+
 
 
         </li>
@@ -2213,6 +2278,10 @@ It is implemented as an array of columns (rather than rows) of tokens
 
 
 <dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Either a token or an empty position.</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -2262,7 +2331,7 @@ It is implemented as an array of columns (rather than rows) of tokens
 
 
 
-    <h5>Type:</h5>
+    <h5 class="h5-types">Type:</h5>
     <ul>
         <li>
             
@@ -2270,6 +2339,7 @@ It is implemented as an array of columns (rather than rows) of tokens
 |
 
 <span class="param-type">0</span>
+
 
 
         </li>
@@ -2298,7 +2368,7 @@ It is implemented as an array of columns (rather than rows) of tokens
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a> on Wed May 03 2023 11:43:59 GMT+0100 (British Summer Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Fri May 02 2025 12:56:08 GMT+0100 (British Summer Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
@@ -2307,5 +2377,7 @@ It is implemented as an array of columns (rather than rows) of tokens
 
 
 
+    <link type="text/css" rel="stylesheet" href="custom.css">
+    
 </body>
 </html>
